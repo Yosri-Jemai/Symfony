@@ -1,0 +1,24 @@
+<style>
+    table,th,td{
+        border: 2px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+</style>
+
+
+<h1>Add Product</h1>
+<form action="{{ path('add_product')}}" method="post">
+<div>
+    <label for="name">
+        <input type="text" id="name" name="name"  required>
+    </label>
+</div>
+<div>
+    <label for="date">
+        <input type="datetime-local" id="date" name="dateOfProduction"  required>
+    </label>
+</div>
+    <button type="submit">Apply</button>
+
+</form>

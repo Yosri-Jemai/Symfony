@@ -1,0 +1,37 @@
+<style>
+    table,th,td{
+        border: 2px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+    div{
+        padding-top: 10px;
+        font-family: sans-serif;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 8px;
+        color: darkblue;
+    }
+</style>
+
+<h1>All Products</h1>
+<table>
+
+    <tr>
+        <th><strong>Id</strong></th>
+        <th><strong>Name</strong></th>
+        <th><strong>Date of publication</strong></th>
+    </tr>
+
+    {% for a in products %}
+    <tr>
+        <td>{{ a.id }}</td>
+        <td>{{ a.name }}</td>
+        <td>{{ a.dateOfProduction|date }}</td>
+        <td><a href="{{ path('update_product',{id:a.id}) }}">Update</a></td>
+        <td><a href="{{ path('delete_product',{id:a.id}) }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+<div><a href="{{ path('add_product') }}">Add Product</a></div>
